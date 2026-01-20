@@ -645,8 +645,13 @@ def upload_audio():
 
 @app.route('/audio/<filename>')
 def serve_audio(filename):
-    """Serve audio file"""
+    """Serve audio file từ uploads hoặc audio_stories"""
+    # Thử tìm trong uploads folder trước
     file_path = Path(app.config['UPLOAD_FOLDER']) / filename
+    if not file_path.exists():
+        # Thử tìm trong audio_stories folder
+        file_path = Path('audio_stories') / filename
+    
     if not file_path.exists():
         return jsonify({'error': 'File khong ton tai'}), 404
     

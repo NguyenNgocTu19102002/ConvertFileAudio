@@ -48,6 +48,8 @@ def convert_txt_to_audio(txt_path: str, output_path: str = None, voice: str = "v
     except Exception as e:
         raise Exception(f"Loi khi doc file TXT: {str(e)}")
     
+    # Không xử lý gì thêm, chỉ convert trực tiếp sang audio
+    
     # Tạo output path nếu chưa có
     if output_path is None:
         output_path = txt_file.with_suffix(f'.{format}')

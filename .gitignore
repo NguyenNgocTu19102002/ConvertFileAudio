@@ -18,6 +18,12 @@ ENV/
 uploads/
 temp/
 qr_data.json
+stories_qr_data.json
+
+# Batch process outputs
+stories/
+audio_stories/
+qr_codes/
 
 # Sample files
 sample.*
